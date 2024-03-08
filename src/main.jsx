@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home.jsx";
 import Products from "./pages/Products/Products.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Basket from "./pages/Basket/Basket.jsx";
+import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/basket",
     element: <Basket />,
+  },
+  {
+    path: "/landingpage",
+    element: <LandingPage />,
   },
 ]);
 
