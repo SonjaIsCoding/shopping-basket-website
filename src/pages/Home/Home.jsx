@@ -8,12 +8,12 @@ export function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function loadProducts(params) {
+    async function loadProducts() {
       console.log("Load Data");
       try {
         setIsLoading(true);
         const response = await axios.get(
-          `${"https://prj-backend-shopping-basket.onrender.com/products"}/products`
+          "https://prj-backend-shopping-basket.onrender.com/products"
         );
         console.log(response.data);
         console.log(response.status);
@@ -31,7 +31,7 @@ export function Home() {
   return (
     <>
       <header>
-        <h1 className={styles.rudi}>Rudis Resterampe</h1>
+        <h1>Rudis Resterampe</h1>
       </header>
       <>
         {console.log(products)}
