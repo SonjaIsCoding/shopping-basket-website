@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-.rudi {
-}
-
 .title {
   display: flex;
   flex-direction: column;
