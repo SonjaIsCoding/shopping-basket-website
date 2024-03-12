@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./Home.module.css";
 
 export function Home() {
-  const [products, setTopProducts] = useState([]);
+  const [topProducts, setTopProducts] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +30,7 @@ export function Home() {
 
   return (
     <>
-      {products.map((product) => {
+      {topProducts.map((product) => {
         return (
           <section key={product.id} className={styles.item}>
             <h2>{product.title}</h2>
