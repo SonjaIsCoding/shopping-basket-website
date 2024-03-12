@@ -1,3 +1,14 @@
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 export function ProductDetails() {
-  return <h1>Product Details</h1>;
+  const { productId } = useParams();
+
+  return (
+    <>
+      <h2>Product Detail</h2>
+      {productId}
+      <Link to={`:productId`}>Product</Link>;
+    </>
+  );
 }

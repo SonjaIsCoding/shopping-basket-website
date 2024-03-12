@@ -29,26 +29,26 @@ export function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       <header>
         <h1>Rudis Resterampe</h1>
       </header>
-      <>
-        {console.log(products)}
-        {products.map((product) => {
+      {products.map((product) => {
+        if (product.top === true) {
           return (
-            <>
-              <div className={styles.title}>
-                <h1>{product.title}</h1>
+            <section key={product.id} className={styles.item}>
+              <h2>{product.title}</h2>
+              <div className={styles.content}>
+                <p>TOP PRODUCT{product.top}</p>
                 <p>{product.category}</p>
-                <p>{product.description}</p>
-                <p>{product.price}</p>
-                <p>{product.stock}</p>
+                <p>Description: {product.description}</p>
+                <p>{product.price} $</p>
+                <p>Stock :{product.stock}</p>
               </div>
-            </>
+            </section>
           );
-        })}
-      </>
-    </>
+        }
+      })}
+    </div>
   );
 }
