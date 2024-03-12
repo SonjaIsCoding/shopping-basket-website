@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,43 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* .nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 1em;
 }
+
+.nav .logo a {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.nav .menu ul {
+  display: flex;
+  gap: 1em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav .menu a {
+  color: var(--color-light);
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.nav .menu a.active {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: 5px;
+} */

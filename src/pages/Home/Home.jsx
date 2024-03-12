@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./Home.module.css";
 
 export function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setTopProducts] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,7 +17,7 @@ export function Home() {
         );
         console.log(response.data);
         console.log(response.status);
-        setProducts(response.data);
+        setTopProducts(response.data.filter((product) => product.top));
       } catch (err) {
         setIsError(true);
         console.log(err);
@@ -29,26 +29,21 @@ export function Home() {
   }, []);
 
   return (
-    <div>
-      <header>
-        <h1>Rudis Resterampe</h1>
-      </header>
+    <>
       {products.map((product) => {
-        if (product.top === true) {
-          return (
-            <section key={product.id} className={styles.item}>
-              <h2>{product.title}</h2>
-              <div className={styles.content}>
-                <p>TOP PRODUCT{product.top}</p>
-                <p>{product.category}</p>
-                <p>Description: {product.description}</p>
-                <p>{product.price} $</p>
-                <p>Stock :{product.stock}</p>
-              </div>
-            </section>
-          );
-        }
+        return (
+          <section key={product.id} className={styles.item}>
+            <h2>{product.title}</h2>
+            <div className={styles.content}>
+              <p>TOP PRODUCT{product.top}</p>
+              <p>{product.category}</p>
+              <p>Description: {product.description}</p>
+              <p>{product.price} $</p>
+              <p>Stock :{product.stock}</p>
+            </div>
+          </section>
+        );
       })}
-    </div>
+    </>
   );
 }

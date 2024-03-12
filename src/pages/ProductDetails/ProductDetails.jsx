@@ -8,6 +8,7 @@ export function ProductDetails() {
     <>
       <h2>Product Detail</h2>
       {productId}
+      {console.log(productId)}
       <Link to={`:productId`}>Product</Link>;
     </>
   );
