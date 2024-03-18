@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
+import { FiStar } from "react-icons/fi";
+import CircularIndeterminate from "../../assets/Animation/Loading.jsx";
 
 export function Home() {
   const [topProducts, setTopProducts] = useState([]);
@@ -28,12 +31,19 @@ export function Home() {
     loadProducts();
   }, []);
 
+  if (isLoading) {
+    return <CircularIndeterminate />;
+  }
+
   return (
     <>
       {topProducts.map((product) => {
         return (
           <section key={product.id} className={styles.item}>
             <h2>{product.title}</h2>
+            <Link to={"/favorites"}>
+              <FiStar />
+            </Link>
             <div className={styles.content}>
               <p>TOP PRODUCT{product.top}</p>
               <p>{product.category}</p>
@@ -41,6 +51,7 @@ export function Home() {
               <p>{product.price} $</p>
               <p>Stock :{product.stock}</p>
             </div>
+            <Link to={"../products/productId"}>Details</Link>
           </section>
         );
       })}

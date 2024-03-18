@@ -1,22 +1,32 @@
 import "./NavBar.module.css";
-import StyleSheet from "../NavBar/NavBar.module.css";
+import StyleSheet from "./NavBar.module.css";
+import { NavLink } from "react-router-dom";
+import { LuShoppingBasket } from "react-icons/lu";
+import { FiStar } from "react-icons/fi";
 
 export default function NavBar() {
   return (
     <header>
       <nav className={StyleSheet.navbar}>
-        <a href="/" className={StyleSheet.title}>
+        <NavLink to={"/"} className={StyleSheet.title}>
           Rudis Resterampe
-        </a>
+        </NavLink>
         <ul>
           <li>
-            <a href="/products">Products</a>
+            <NavLink to={"/products"}>Products</NavLink>
           </li>
           <li>
-            <a href="/basket">Basket</a>
+            <NavLink to={"landingpage"}>Landing Page</NavLink>
           </li>
           <li>
-            <a href="landingpage">Landing Page</a>
+            <NavLink to={"/favorites"}>
+              <FiStar />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/basket"}>
+              <LuShoppingBasket />
+            </NavLink>
           </li>
         </ul>
       </nav>
