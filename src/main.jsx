@@ -8,6 +8,7 @@ import { ProductDetails } from "./pages/ProductDetails/ProductDetails.jsx";
 import { LandingPage } from "./pages/LandingPage/LandingPage.jsx";
 import { RootLayout } from "./pages/RootLayout/RootLayout.jsx";
 import { Basket } from "./pages/Basket/Basket.jsx";
+import { Favorites } from "./pages/Favorites/Favorites.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,12 +33,16 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/basket",
-        element: <Basket />,
-      },
-      {
         path: "/landingpage",
         element: <LandingPage />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+      {
+        path: "/basket",
+        element: <Basket />,
       },
     ],
   },

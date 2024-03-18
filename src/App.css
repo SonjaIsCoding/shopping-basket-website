@@ -79,3 +79,12 @@
   color: var(--color-dark);
   border-radius: 5px;
 } */
+
+/* return (
+    <>
+      <h1>Product Detail</h1>
+      {productId}
+      {console.log(productId)}
+    </>
+  );
+} */

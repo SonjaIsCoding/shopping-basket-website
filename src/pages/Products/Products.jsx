@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import StyleSheets from "../Products/Products.module.css";
+import { Link } from "react-router-dom";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FiStar } from "react-icons/fi";
+import { useParams } from "react-router-dom";
+import CircularIndeterminate from "../../assets/Animation/Loading.jsx";
 
 export function Products() {
   const [products, setProducts] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { productId } = useParams();
 
   useEffect(() => {
     async function loadProducts() {
@@ -23,10 +29,15 @@ export function Products() {
         console.log(err);
       } finally {
         setIsLoading(false);
+        setIsError(false);
       }
     }
     loadProducts();
   }, []);
+
+  if (isLoading) {
+    return <CircularIndeterminate />;
+  }
 
   return (
     <>
@@ -36,14 +47,21 @@ export function Products() {
       <div>
         {products.map((product) => {
           return (
-            <section key={product.id} className={StyleSheets.item}>
+            <section key={product.id} className={StyleSheets.productitem}>
               <h2>{product.title}</h2>
+              <Link to={"/favorites"}>
+                <FiStar />
+              </Link>
               <div className={StyleSheets.content}>
                 <p>{product.category}</p>
                 <p>Description: {product.description}</p>
                 <p>{product.price} $</p>
                 <p>Stock :{product.stock}</p>
               </div>
+              <Link to={`/products/${product.title}`}>
+                <FaMagnifyingGlass />
+              </Link>
+              <Link to={product.id}>Details</Link>
             </section>
           );
         })}

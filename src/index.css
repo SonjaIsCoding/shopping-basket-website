@@ -1,9 +1,47 @@
-/* @font-face {
+@font-face {
   font-family: "Protest";
-  src: url("../src/assets/fonts/Protest_Revolution/ProtestRevolution-Regular.ttf");
+  src: url("../../assets/fonts/Protest_Revolution/ProtestRevolution-Regular.ttf");
 }
 
-:root {
+@font-face {
+  font-family: "Montserrat";
+  src: url("../src/assets/fonts/Montserrat/static/");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Protest", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 30px;
+}
+
+h2 {
+  font-family: "Monteserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Monteserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -28,8 +66,8 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  /* display: flex;
+  margin: 0; */
+/* display: flex;
   place-items: center; */
 /* min-width: 320px;
 min-height: 100vh; */
